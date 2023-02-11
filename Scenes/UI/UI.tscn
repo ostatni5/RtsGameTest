@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Textures/placeholder.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/UI/TooltipButton.tscn" type="PackedScene" id=3]
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_right = 2.0
+
+[node name="Panel" type="Panel" parent="."]
+margin_top = 447.0
+margin_right = 1022.0
+margin_bottom = 598.0
+
+[node name="Map" type="Panel" parent="Panel"]
+margin_left = 793.0
+margin_top = 1.0
+margin_right = 1021.0
+margin_bottom = 149.0
+
+[node name="SelectionActions" type="Panel" parent="Panel"]
+margin_right = 371.0
+margin_bottom = 149.0
+
+[node name="Button2" parent="Panel/SelectionActions" instance=ExtResource( 3 )]
+
+[node name="Button" type="Button" parent="Panel/SelectionActions"]
+margin_left = 52.0
+margin_right = 96.0
+margin_bottom = 38.0
+icon = ExtResource( 2 )
+icon_align = 1
+
+[node name="SelectionInfo" type="Panel" parent="Panel"]
+margin_left = 383.0
+margin_top = 1.0
+margin_right = 741.0
+margin_bottom = 148.0
+
+[node name="Name" type="Label" parent="Panel/SelectionInfo"]
+margin_left = 37.0
+margin_top = 9.0
+margin_right = 77.0
+margin_bottom = 23.0
+text = "Name"
