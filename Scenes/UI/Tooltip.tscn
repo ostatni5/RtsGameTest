@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/UI/Tooltip.gd" type="Script" id=1]
+
+[node name="Node" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+margin_right = 159.0
+margin_bottom = 96.0
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 5.0
+margin_top = 6.0
+margin_right = 153.0
+margin_bottom = 58.0
+text = "Tooltip text"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="timer_timeout"]

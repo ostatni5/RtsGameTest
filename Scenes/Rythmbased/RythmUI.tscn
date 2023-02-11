@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Rythmbased/NoteSpawner.tscn" type="PackedScene" id=2]
+
+[node name="RythmUI" type="Panel"]
+margin_right = 1024.0
+margin_bottom = 100.0
+
+[node name="Strumbar" type="ColorRect" parent="."]
+margin_left = 40.0
+margin_right = 43.0
+margin_bottom = 100.0
+color = Color( 0.670588, 0.0588235, 0.0588235, 0.352941 )
+
+[node name="Panel" parent="." instance=ExtResource( 2 )]
+margin_left = 1000.0
+margin_right = 1008.0
+margin_bottom = 100.0

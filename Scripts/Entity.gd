@@ -5,11 +5,13 @@ onready var sceneRoot = get_tree().get_current_scene()  # get the root node of t
 onready var model = $character_knight
 onready var selectEffect = $SelectEffect
 
+var target_location = Vector3(0,0,0)
 var velocity = Vector3(0,0,0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	navigationAgent.set_target_location(global_transform.origin)	
+	target_location = global_transform.origin
+	navigationAgent.set_target_location(target_location)
 	add_to_group("units")
 
 #move the agent to the clicked position
@@ -26,9 +28,12 @@ func _physics_process(delta):
 
 	velocity = move_and_slide(velocity)
 	
+func navigate_by(position):
+	navigate_to(target_location+position)
 
 func navigate_to(position):
-	navigationAgent.set_target_location(position)
+	target_location = position
+	navigationAgent.set_target_location(target_location)
 
 func select():
 	selectEffect.visible = true
